@@ -4,6 +4,10 @@
 
 This repo is a runnable demo for the [Apify Store Japan Market Actors](https://apify.com/store/actors/japan-market-mcp) directory. Every CSV sample below came from a single Apify Actor run; every script below runs with `pip install apify-client` + a free [Apify token](https://apify.com).
 
+## What is this?
+
+Japan market data — real scraped market data from Japan's e-commerce marketplaces (Mercari, Yahoo Auctions, Rakuten, SUUMO, Kakaku.com) as ready-to-use sample CSV files plus 3 runnable Python web scraping snippets. No scraping infrastructure needed: the data comes from Apify Actors, and you can point the same scripts at the live marketplaces in under 10 lines.
+
 ## Why this exists
 
 Japan is the world's third-largest economy and its secondhand markets (Mercari 5M+ daily listings, Yahoo Auctions 15M+ items, Rakuten ¥2T GMV) are invisible to most English-language data tooling. These 86 Apify Actors close that gap — and this repo proves they work.
