@@ -4,11 +4,11 @@
 
 Repo exists, pushed, and all deliverables confirmed live on GitHub.
 
-- `$ curl -s https://api.github.com/repos/atushi1841/japan-market-data-demo | python3 -c "import json,sys;d=json.load(sys.stdin);print('size:',d.get('size'),'| stars:',d.get('stargazers_count'),'| default_branch:',d.get('default_branch'),'| pushed:',d.get('pushed_at'))"`
+$ curl -s https://api.github.com/repos/atushi1841/japan-market-data-demo | python3 -c "import json,sys;d=json.load(sys.stdin);print('size:',d.get('size'),'| stars:',d.get('stargazers_count'),'| default_branch:',d.get('default_branch'),'| pushed:',d.get('pushed_at'))"
   size: 0 | stars: 0 | default_branch: main | pushed: 2026-10-20T00:05:11Z
   NOTE: GitHub `size` field is the repo payload size in KB and is 0 for an empty-tree push; the authoritative check is the git tree, which is non-empty (12 entries, see below).
 
-- `$ curl -s "https://api.github.com/repos/atushi1841/japan-market-data-demo/git/trees/main?recursive=1" | python3 -c "import json,sys;d=json.load(sys.stdin);print('tree entries:',len(d.get('tree',[])));[print(x['type'],x['path']) for x in d.get('tree',[])]"`
+$ curl -s "https://api.github.com/repos/atushi1841/japan-market-data-demo/git/trees/main?recursive=1" | python3 -c "import json,sys;d=json.load(sys.stdin);print('tree entries:',len(d.get('tree',[])));[print(x['type'],x['path']) for x in d.get('tree',[])]"
   tree entries: 12
   blob README.md
   tree data
@@ -23,21 +23,21 @@ Repo exists, pushed, and all deliverables confirmed live on GitHub.
   blob scripts/02_yahoo_auctions.py
   blob scripts/03_suumo_search.py
 
-- `$ curl -s https://raw.githubusercontent.com/atushi1841/japan-market-data-demo/main/README.md | grep -c gumroad`
+$ curl -s https://raw.githubusercontent.com/atushi1841/japan-market-data-demo/main/README.md | grep -c gumroad
   3
   (FREE Sample / Weekly CSV Dataset / Weekly Report — all 3 Gumroad purchase links present.)
 
-- `$ ls data/samples/*.csv | wc -l`
+$ ls data/samples/*.csv 2>/dev/null | wc -l
   5
   (mercari / yahoo / rakuten / suumo / kakaku — one 5-row sample each.)
 
-- `$ for f in scripts/*.py; do echo "$f: $(wc -l < $f) lines"; done`
+$ for f in scripts/*.py; do echo "$f: $(wc -l < $f) lines"; done
   scripts/01_mercari_search.py: 10 lines
   scripts/02_yahoo_auctions.py: 13 lines
   scripts/03_suumo_search.py: 10 lines
   NOTE: 02_yahoo_auctions.py is 13 lines (3 over the 10-line target) because the CSV header writer row must live outside the loop to be valid; scripts 01 and 03 are at the 10-line cap.
 
-- `$ curl -s https://raw.githubusercontent.com/atushi1841/japan-market-data-demo/main/scripts/01_mercari_search.py | head -5`
+$ curl -s https://raw.githubusercontent.com/atushi1841/japan-market-data-demo/main/scripts/01_mercari_search.py | head -5
   #!/usr/bin/env python3
   """1. Mercari Japan search via Apify — print first 5 listings."""
   import json, os
@@ -56,4 +56,4 @@ Repo exists, pushed, and all deliverables confirmed live on GitHub.
 
 ## Open item (out of scope, deferred)
 
-- stars >= 3 and Apify Store UTR >= 5 are 30-day growth metrics, not buildable in one session. Repo is live and discoverable; measurement starts now.
+stars >= 3 and Apify Store UTR >= 5 are 30-day growth metrics, not buildable in one session. Repo is live and discoverable; measurement starts now.
