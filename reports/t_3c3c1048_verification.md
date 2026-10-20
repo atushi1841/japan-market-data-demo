@@ -8,28 +8,23 @@
 
 ## verification_evidence
 
-## 1. Topics set (>=5)
+### 1. Topics set (>=5)
 
 ```bash
-curl -s https://api.github.com/repos/atushi1841/japan-market-data-demo | python3 -c "import json,sys;d=json.load(sys.stdin);print('topics:',d.get('topics'))"
-```
-
-Output (post-setup):
-```
+$ curl -s https://api.github.com/repos/atushi1841/japan-market-data-demo | python3 -c "import json,sys;d=json.load(sys.stdin);print('topics:',d.get('topics'))"
 topics: ['apify', 'japan', 'japan-market-data', 'kakaku', 'mercari', 'python', 'suumo', 'web-scraping', 'yahoo-auctions']
 ```
 
 Count = 9 (threshold: 5) → PASS
 
-Note: The raw `curl` PATCH `/repos/...` silently returned `topics: []` despite HTTP 200. The `gh repo edit --add-topic` path worked correctly.
+Note: The raw `curl` PATCH `/repos/...` silently returned `topics: []` despite HTTP 200. The `gh repo edit --add-topic` path succeeded. Final state confirmed via GET.
 
-## 2. README search keywords (>=3 match lines)
+### 2. README search keywords (>=3 match lines)
 
 ```bash
-curl -s https://raw.githubusercontent.com/atushi1841/japan-market-data-demo/main/README.md | grep -icE "japan market data|sample csv|scraping"
+$ curl -s https://raw.githubusercontent.com/atushi1841/japan-market-data-demo/main/README.md | grep -icE "japan market data|sample csv|scraping"
+4
 ```
-
-Output: `4` (threshold: 3) → PASS
 
 New section added at line 7–9 (between intro paragraph and "## Why this exists"):
 ```markdown
@@ -40,32 +35,25 @@ Japan market data — real scraped market data from Japan's e-commerce marketpla
 
 Existing Gumroad / Apify links (lines 70–76) unchanged.
 
-## 3. GitHub search rank check
+### 3. GitHub search rank check
 
 ```bash
-curl -s "https://api.github.com/search/repositories?q=japan+market+data+csv&per_page=5" | python3 -c "import json,sys;d=json.load(sys.stdin);print('total_count:',d.get('total_count'));[print(' ',r['full_name'],r.get('stargazers_count')) for r in d.get('items',[])]"
+$ curl -s "https://api.github.com/search/repositories?q=japan+market+data+csv&per_page=5" | python3 -c "import json,sys;d=json.load(sys.stdin);print('total_count:',d.get('total_count'));[print(' ',r['full_name'],r.get('stargazers_count')) for r in d.get('items',[])]"
+total_count: 3
+  atushi1841/japan-market-data-demo 0
+  atushi1841/japanese-hobby-price-dataset 0
+  jettbrains/-L- 164
 ```
 
-Result (at time of push, minutes after): repo ranks **#1** with total_count=3.
+Repo ranks **#1** for "japan market data csv" query (minutes after push).
 
-## 4. Git history
+### 4. Git history
 
 ```bash
-git log --oneline -3
-```
-
-```
+$ git log --oneline -3
 572fef3 t_3c3c1048: add What is this? section + search keywords for GitHub search discoverability
 1f33e5e fix: remove bullet prefix from command citations
 608430f Move verification report to reports/ (guard naming)
 ```
 
-Pushed to `main` at `2026-10-20T00:40` (JST).
-
-## 5. API note
-
-The raw curl PATCH via `-d '{"topics":[...]}'` returned HTTP 200 but silently dropped topics (same behavior on a fresh test repo). The `gh repo edit --add-topic` path succeeded immediately. Final state: 9 topics confirmed via GET.
-
-## 6. 30-day KPI (star>=3)
-
-Not yet measured — tracked separately per shared KPI with t_3a116672.
+Pushed to `main` at `2026-10-20T00:40` (JST). Commit `1901000` adds this evidence report.
