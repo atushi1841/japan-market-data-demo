@@ -1,0 +1,6 @@
+id,source,property_name,location,prefecture,municipality,rent_jpy,management_fee_jpy,deposit,key_money,layout,area_m2,floor,floorplan_url,status,scraped_at
+S-20261020-001,suumo,Stella Tower Shinjuku,東京都,新宿区,新宿,198000,12000,200000,20000,1LDK,42.5,10F,https://suumo.jp/100000000000,Available,2026-10-20T06:10:00Z
+S-20261020-002,suumo,Granage Sapporo Central,北海道,札幌市,中央区,72000,5000,70000,0,1K,28.0,5F,https://suumo.jp/100000000001,Available,2026-10-20T06:10:00Z
+S-20261020-003,suumo,Osaka Umeda Garden Tower,大阪府,大阪市,北区,145000,10000,150000,15000,1DK,38.2,22F,https://suumo.jp/100000000002,Leased,2026-10-20T06:10:00Z
+S-20261020-004,suumo,Park Tower Fukuoka Hakata,福岡市,博多区,博多,138000,8000,140000,10000,1LDK,45.0,18F,https://suumo.jp/100000000003,Available,2026-10-20T06:10:00Z
+S-20261020-005,suumo,Green Tower Nagoya Sakae,愛知県,名古屋市,中区,112000,7000,110000,5000,2DK,52.3,8F,https://suumo.jp/100000000004,Available,2026-10-20T06:10:00Z

@@ -1,0 +1,6 @@
+id,source,product_name,category,lowest_price_jpy,shop_count,average_price_jpy,shop_name_lowest,shop_url_lowest,review_avg,rating,updated_at
+K-20261020-001,kakaku.com,Sony WH-1000XM5 Wireless Headphones,electronics,39800,12,41234,Amazon Japan,https://www.amazon.co.jp/dp/B0B2S4K9X5,4.6,4.7,2026-10-20T05:55:00Z
+K-20261020-002,kakaku.com,Dyson V15 Detect Cordless Vacuum Cleaner,appliances,64800,9,67100,Yodobashi Camera,https://www.yodobashi.com/product/1000000000000000,4.5,4.6,2026-10-20T05:55:00Z
+K-20261020-003,kakaku.com,SanDisk Extreme PRO 1TB microSD UHS-II,electronics,19800,7,20980,Bic Camera,https://www.biccamera.com/bc/bc00000000000000000000,4.4,4.5,2026-10-20T05:55:00Z
+K-20261020-004,kakaku.com,Shimano 22 Stella 2500HG Spinning Reel,sports,23980,5,24800,Amazon Japan,https://www.amazon.co.jp/dp/B000000000000,4.7,4.8,2026-10-20T05:55:00Z
+K-20261020-005,kakaku.com,Shiseido UNO LOTION 400ml,cosmetics,858,15,892, Rakuten Ichiba,https://item.rakuten.co.jp/0000/00000000.0000/,4.3,4.4,2026-10-20T05:55:00Z
