@@ -82,3 +82,12 @@ The Actors above are free to run, but the curated weekly datasets built on top o
 ## License
 
 Samples are synthetic demo data generated for illustration. Scripts are MIT — see the [parent project](https://github.com/atushi1841/japan-market-data).
+---
+
+## Apify Store
+
+このリポジトリの Actor は [Apify Store](https://apify.com/fruitful_quintessence) で公開中です。
+日本の EC・市場データ収集（Mercari, Yahoo Auctions, Rakuten, SUUMO, DLsite 等）に対応した Apify Actor ディレクトリです。
+
+**Search keywords**: Japan market data, Japanese e-commerce scraping, Apify actors, mercari scraper, rakuten scraper, yahoo auctions japan, suumo real estate, dlsite scraper
+
